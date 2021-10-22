@@ -1,0 +1,224 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  /* box-sizing: border-box; */
+}
+ul, ol {
+  list-style:none;
+}
+a{
+  text-decoration:none;
+}
+
+body{
+  width:100%;
+  height:1200px;
+  background-image: linear-gradient( to top, rgba(14, 139, 139, 0.89), rgb(11, 111, 151));
+}
+
+section {
+  position:relative;
+  width:580px;
+  height:1000px;
+  padding: 30px;
+  background-color: #fff;
+  margin: 100px auto;
+  box-shadow: 10px 10px 30px rgba(85, 85, 85, 0.1);
+  box-shadow: 5px 8px 20px rgba(54, 54, 54, 0.66); 
+  border-radius:10px;
+}
+fieldset {
+  border:none;
+}
+
+/* 사이드메뉴 */
+aside {
+  position : fixed;
+  margin-top: -100px;
+}
+nav.side_menu {
+  /* transform:translateY(-200px); */
+  position:fixed;
+  left:-140px;
+  background-color:white;
+  opacity:40%;
+  width:140px;
+  height:100vw;
+  transition-duration:0.8s;
+  transition-delay:0.1s;
+}
+img.side_menu {
+  position:fixed;
+  transition-duration:0.6s;
+  margin:2vw;
+  width:50px;
+  height:50px;
+  cursor:pointer;
+}
+img.side_menu:hover +nav.side_menu, nav.side_menu:hover {
+  transform:translate(140px);
+  opacity:80%;
+}
+img.side_menu:hover{
+  opacity:0%;
+}
+nav.side_menu ul {
+  margin-top:100px;
+}
+nav.side_menu ul li {
+  width:120px;
+  height:44px;
+  border-bottom:2px solid #73a2ff;
+}
+nav.side_menu ul li a{
+  display: block;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:12px;
+  color:black;
+  transition-duration:0.5s;
+}
+nav.side_menu ul li a:hover{
+  color:#aa8dff;
+}
+
+/* 회원가입박스 */
+#header {
+  font-size:200%;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+#wrapper {
+  position: relative;
+  height: 100%;
+}
+
+#content {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 460px;
+}
+
+
+
+
+/* 입력폼 */
+h3 {
+  margin: 19px 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.box {
+  width: 100%;
+  height: 51px;
+  border: solid 1px #dadada;
+  padding: 10px 14px 10px 14px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.int {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 29px;
+  border: none;
+  font-size: 15px;
+}
+
+.box.intputbox_id {
+  padding-right: 110px;
+}
+
+.box.intputbox_pass {
+  padding-right: 40px;
+}
+
+.box.intputbox_pass_check {
+  padding-right: 40px;
+}
+
+#birth_wrap {
+  display: table;
+}
+
+#birth_yy {
+  display: table-cell;
+  width: 147px;
+}
+
+#birth_mm {
+  display: table-cell;
+  width: 147px;
+  vertical-align: middle;
+}
+
+#birth_dd {
+  display: table-cell;
+  width: 147px;
+}
+
+#birth_mm, #birth_dd {
+  padding-left: 10px;
+}
+
+select {
+  width: 100%;
+  height: 29px;
+  font-size: 15px;
+  border: none;
+}
+
+/* 에러메세지 */
+.error_id,.error_psw,.error_psw_check,.error_userName,.error_birth,.error_gender,.error_email,.error_mobile {
+  float:right;
+  color: red;    
+  font-weight:lighter;
+  display:none;
+  /* display:inline; */
+}
+.error_id {
+  float:right;
+  color: red;    
+  font-weight:lighter;
+  display:none;
+}
+ 
+/* 버튼 */
+.btn_area {
+  margin: 30px 0 91px;
+}
+
+#btn-join {
+  width: 100%;
+  padding: 21px 0 17px;
+  border: 0;
+  cursor: pointer;
+  color: #fff;
+  background-color: #2a8898;
+  font-size: 20px;
+}
+/* 우상단마크 */
+body>h1 {
+	position:absolute;
+	top:4vh;
+	right:4vw;
+	font-size:0;
+}
+body>h1 strong {
+	font-size:36px;
+	color:#fff;
+	line-height: 1.4;
+	letter-spacing:1px;
+}
+body>h1 span {
+	font-size:12px;
+	color:#fff;
+	opacity:0.8;
+	line-height:1;
+	letter-spacing:1px; 
+}

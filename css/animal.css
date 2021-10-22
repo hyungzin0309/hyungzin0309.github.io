@@ -1,0 +1,253 @@
+@charset "utf-8";
+
+
+* {
+	/* 드래그 방지 */
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none; 
+	user-select:none;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+ul, ol, li {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	outline: 0;
+}
+
+/* 전체 화면 */
+figure {
+	width:100%;
+	height:100vh;
+	overflow:hidden;
+	background: linear-gradient(25deg, rgb(11, 111, 151),rgba(14, 139, 139, 0.89));
+}
+/* 우상단마크 */
+figure h1 {
+	position:absolute;
+	top:4vh;
+	right:4vw;
+	font-size:0;
+}
+figure h1 strong {
+	font-size:36px;
+	color:#fff;
+	line-height: 1.4;
+	letter-spacing:1px;
+}
+figure h1 span {
+	font-size:12px;
+	color:#fff;
+	opacity:0.8;
+	line-height:1;
+	letter-spacing:1px; 
+}
+/* 사이드메뉴 */
+aside {
+  position : fixed;
+}
+nav.side_menu {
+  position:fixed;
+  left:-140px;
+  background-color:white;
+  opacity:40%;
+  width:140px;
+  height:100vw;
+  transition-duration:0.8s;
+  transition-delay:0.1s;
+}
+img.side_menu {
+  position:fixed;
+  transition-duration:0.6s;
+  margin:2vw;
+  width:50px;
+  height:50px;
+  cursor:pointer;
+}
+img.side_menu:hover +nav.side_menu, nav.side_menu:hover {
+  transform:translate(140px);
+  opacity:80%;
+}
+img.side_menu:hover{
+  opacity:0%;
+}
+nav.side_menu ul {
+  margin-top:100px;
+}
+nav.side_menu ul li {
+  width:120px;
+  height:44px;
+  border-bottom:2px solid #73a2ff;
+}
+nav.side_menu ul li a{
+  display: block;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:12px;
+  color:black;
+  transition-duration:0.5s;
+}
+nav.side_menu ul li a:hover{
+  color:#aa8dff;
+}
+/* 고정 공간(기준) */
+figure section {
+	width:24vw;
+	height:70vh;
+	position:relative;
+	left:50%;
+	top:140%; 
+	margin-top:-26vh; 
+	margin-left:-12vw;
+	transition:1s;
+	/* border:1px solid red; */
+}
+/* 돌아가는 네모를 담는 공간 */
+figure section article {
+	width:100%;
+	height:100%;
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+/* 보이는 네모 */
+figure section article .inner {
+	width:100%;
+	height:100%;
+	background:#f0f7ff;
+	padding:5vh 2.5vw 8vh;
+	box-sizing:border-box;
+	display:flex;
+	justify-content: center;
+	align-content:space-between;
+	flex-wrap: wrap;
+	border-radius:10px;
+	box-shadow: 10px 10px 20px rgba(0,0,0,0.1);
+	opacity:0.6;
+	transform:scale(0.8);
+	transition: all 1s ease;
+}
+/* article에 on클래스 추가시 */
+figure section article.on .inner {
+	opacity:0.95;
+	transform:scale(1.1);
+}
+
+/* 좌우넘기는 버튼 */
+figure .btn-prev {
+	width:60px;
+	height:60px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-20vw, -50%);
+	display:flex;
+	align-items:center;
+}
+figure .btn-next {
+	width:60px;
+	height:60px;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(16.5vw, -50%);
+	display:flex;
+	align-items:center;
+}
+figure .btn-next span {
+	color:white;
+	font-size:20px;
+	opacity:0.7;
+	/* transform:translateX(-30%); */
+	transition:0.5s;
+}
+figure .btn-prev span {
+	color:white;
+	font-size:20px;
+	opacity:0.7;
+	/* transform:translateX(-30%); */
+	transition:0.5s;
+}
+figure .btn-next:hover span{
+	cursor: pointer;
+	opacity:1;
+	transform:scale(1.2);
+}
+figure .btn-prev:hover span{
+	cursor: pointer;
+	opacity:1;
+	transform:scale(1.2);
+}
+
+/* 비디오 */
+
+.animal-container {
+	width:230px;
+	height:230px;
+	background-size: cover;
+	border-radius: 50%;
+	box-shadow: 7px 11px 16px #142e3870;
+	margin:auto;
+}
+.animal-container div{
+	display:block;
+}
+.name {
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-size:150%;
+	font-weight: 700;
+	font-family: 'Gamja Flower', cursive;
+	text-shadow: 2px 2px 2px #d1d1d1;
+}
+.content p {
+	line-height:160%;
+	font-weight: 600;
+	font-family: 'Gamja Flower', cursive;
+	font-size:120%;
+	text-shadow: 2px 2px 2px #d1d1d1;
+}
+.jipsa{
+	background-image: url("../image/jipsa.JPG");
+	background-position: 45% 50%;
+}
+.ddong_goo { 
+	background-image: url("../image/ddong_goo.jpeg");
+	background-position: 51% 52%;
+	background-size: 175%;
+}
+.happy {
+	background-image: url("../image/haeng_bok.JPG");
+	background-position: 63% 17%;
+	background-size: 175%;
+}
+.funny {
+	background-image: url("../image/kibbeum.png");
+	background-position: 85% 35%;
+	background-size: 350%;
+}
+.snow {
+	background-image: url("../image/seol.png");
+	background-position: 63% 39%;
+	background-size: 175%;
+}
+.boksil {
+	background-image: url("../image/boksil.jpeg");
+	background-position: 63% 25%;
+	background-size: 154%;
+}
+.fall {
+	background-image: url("../image/fall.png");
+	background-position: 89% 24%;
+	background-size: 227%;
+}
+.star {
+	background-image: url("../image/star.png");
+	background-position: 11% 24%;
+	background-size: 222%;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/developer_roadmap.css">
+  <script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+    <title>developer roadmap</title>
+</head>
+<body>
+  <h1>
+    <strong>KHJLAB</strong><br>
+    <span>A JUMSIM MO MUK JI</span>
+</h1>
+  <aside>
+    <!-- 메뉴바 아이콘 -->
+    <img src="image/menu6.png" class="side_menu" alt="">
+    <nav class="side_menu">
+        <!-- 메뉴바 내용 -->
+        <ul>
+          <li><a href="index.html">메인으로</a></li>
+            <li><a href="introduce_myself.html">자기소개</a></li>
+            <li><a href="animal.html">동물농장</a></li>
+            <li><a href="member_join.html">회원가입</a></li>
+        </ul>
+    </nav>
+</aside>
+  <main>
+    <div class="text-box">
+      <p>&nbsp;저는 문과생이지만 국어, 영어보다 수학 과학을 더 좋아하고 열심히 공부했습니다. 그러다 수능 직후 우연히 kh에서 2주짜리 C++ 기초강의를 듣게 되었고 그 때 프로그래밍의 매력을 알게 되었습니다. <br> 그리고 그 때 개발자가 되고 싶다는 생각을 처음 하게 되었습니다.</p>
+      <p>&nbsp;그러나 대학에서의 술은 달고 밤은 길었습니다. 대학 4년, 군대까지 포함 약 6년을 정신못차리고 놀기 바빴습니다. 컴공으로 미리 전과해두라는 주변의 조언도 무시했습니다. 놀기 바빴으니까요.</p>
+      <p>&nbsp;정신 차렸을 땐 이미 졸업이 다가와 있었고, 저는 지난 날을 후회했습니다. 그러나 좌절하지 않았습니다.</p>
+      <p id="KH">&nbsp;저에겐 'KH정보교육원'이 있으니까요.</p>
+      <p>&nbsp;1차 목표는 저 스스로가 성장할 수 있는 회사에 취직하는 것입니다. 단순히 쓰고 버려지는 것이 아니라, 업무를 통해 많은 것을 배우고 다시 공부하며 백엔드에서의 경험과 실력을 쌓는 것을 목표로 하고 있습니다. 그러기 위해 API디자인 데이터베이스 기본보안 등 백엔드의 기초를 열심히 닦겠습니다.</p>
+      <p>&nbsp;두 번째 목표는 프로그래밍 거장 김동현 강사님을 제치고 백엔드의 별이 되는 것입니다. 몇 년이 걸릴지는 모르겠습니다. 능력이 부족해 못 이룰 수도 있습니다. 그러나 포기하지 않고 한 길을 걸으며 이 분야에서 최고가 되는 것이 저의 목표입니다.</p>
+      <p>&nbsp;세 번째 목표는 백엔드를 마스터한 뒤, 프론트까지 영역을 넓혀 풀스택 개발자의 정점을 찍는 것입니다. 20년이 걸리든 30년이 걸리든 끝까지 노력해 웹 프로그래밍 분야에서 인정받는 사람이 되는 것이 저의 최종 목표입니다.</p>
+    </div>
+    <div class="img-box"><img id="ddabong" src="image/ddabong.png" alt=""></div>
+  </main>
+  <script>
+    $(document).ready(()=>{$("p:first").css("opacity",1)});
+
+    //스크롤이벤트
+    $(window).on("scroll",()=>{
+      $("p").each((i,e)=>{
+        //요소의 위치(top : 상단을 기준으로)
+        //this = window, scrollTop : 스크롤 상단의 위치
+        //스크롤 상단의 위치와 요소 상단의 위치를 이용한 제어
+        if($(e).offset().top-300<$(this).scrollTop() && $(this).scrollTop()<$(e).offset().top){
+            $(e).css("opacity",1);
+        }
+        else{
+          $(e).css("opacity",0.1);
+        }
+      })
+    });
+    $(window).on("scroll",()=>{
+      if($(KH).offset().top-300<$(this).scrollTop() && $(this).scrollTop()<$(KH).offset().top){
+        $(ddabong).css("opacity",1);
+      }
+      else{
+        $(ddabong).css("opacity",0);
+      }
+    });
+
+  </script>
+</body>
+</html>

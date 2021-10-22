@@ -1,0 +1,175 @@
+* {
+  /* 드래그 방지 */
+/* -webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none; 
+user-select:none; */
+margin: 0px;
+padding: 0px;
+/* box-sizing: border-box; */
+}
+ul, ol {
+list-style:none;
+}
+a{
+text-decoration:none;
+}
+body{
+  width:100%;
+  min-height:2350px;
+  background-image: linear-gradient( to top, rgba(14, 139, 139, 0.89), rgb(11, 111, 151));
+}
+
+main {
+  position:relative;
+  margin:auto;
+  margin-top:20vh;
+  /* margin-bottom:15vh; */
+  width:600px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.text-box {
+  /* background-color: white; */
+  min-width: 300px;
+  max-width: 500px;
+  margin:auto;
+}
+
+p {
+  font-size: 1.1em;
+  /* font-family: 'Sunflower', sans-serif; */
+  font-weight:500;
+  line-height: 1.75em;
+  border-top: 3px solid;
+  border-image: linear-gradient(to right,rgb(14, 139, 139), rgb(11, 111, 151)100%);
+  border-image-slice: 1;
+  border-width: 3px;
+  margin: 0;
+  padding: 40px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  counter-increment: section;
+  position: relative;
+  color: black;
+  transition:1s;
+  opacity:0.1;
+}
+p:before {
+  content: counter(section); 
+  position: absolute;
+  border-radius: 50%;
+  padding: 10px;
+  height: 1.25em;
+  width: 1.25em;
+  background-image: linear-gradient(45deg, rgb(14, 139, 139), rgb(11, 111, 151) 100%);
+  text-align: center;
+  line-height: 1.25em;
+  color: white;
+  font-size: 1em;
+} 
+p:nth-child(odd) {
+  border-right: 3px solid;
+  padding-left: 0;
+}
+/* 숫자표기 오른쪽 밀착 */
+p:nth-child(odd):before {
+  left: 100%; 
+  margin-left: -20px;
+}
+p:nth-child(even) {
+  border-left: 3px solid;
+  padding-right: 0;
+  
+}
+/* 숫자표기 왼쪽 밀착 */
+p:nth-child(even):before {
+  right: 100%; 
+  margin-right: -20px;
+} 
+p:first-child {
+  border-top: 0;
+}
+p:last-child {
+  border-bottom-right-radius:0;
+  border-bottom-left-radius:0;
+}/* 사이드메뉴 */
+aside {
+  position : fixed;
+  margin-top: -158px;
+}
+nav.side_menu {
+  /* transform:translateY(-200px); */
+  position:fixed;
+  left:-140px;
+  background-color:white;
+  opacity:40%;
+  width:140px;
+  height:100vh;
+  transition-duration:0.8s;
+  transition-delay:0.1s;
+}
+img.side_menu {
+  position:fixed;
+  transition-duration:0.6s;
+  margin:2vw;
+  width:50px;
+  height:50px;
+  cursor:pointer;
+}
+img.side_menu:hover +nav.side_menu, nav.side_menu:hover {
+  transform:translate(140px);
+  opacity:80%;
+}
+img.side_menu:hover{
+  opacity:0%;
+}
+nav.side_menu ul {
+  margin-top:100px;
+}
+nav.side_menu ul li {
+  width:120px;
+  height:44px;
+  border-bottom:2px solid #73a2ff;
+}
+nav.side_menu ul li a{
+  display: block;
+  padding-top:12px;
+  padding-bottom:12px;
+  padding-left:12px;
+  color:black;
+  transition-duration:0.5s;
+}
+nav.side_menu ul li a:hover{
+  color:#aa8dff;
+}
+/* 우상단마크 */
+body>h1 {
+	position:absolute;
+	top:4vh;
+	right:4vw;
+	font-size:0;
+}
+body>h1 strong {
+	font-size:36px;
+	color:#fff;
+	line-height: 1.4;
+	letter-spacing:1px;
+}
+body>h1 span {
+	font-size:12px;
+	color:#fff;
+	opacity:0.8;
+	line-height:1;
+	letter-spacing:1px; 
+}
+
+/* 이미지 */
+#ddabong {
+  position:absolute;
+  left:65%;
+  top:45%;
+  width:150px;
+  opacity:0;
+  transition:1s;
+}

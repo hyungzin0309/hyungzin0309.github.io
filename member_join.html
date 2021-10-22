@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta userName="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/member_join.css"> 
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <title>회원가입</title>
+</head>
+<body style="width:100%">
+    <h1>
+        <strong>KHJLAB</strong><br>
+        <span>A JUMSIM MO MUK JI</span>
+    </h1>
+    <aside>
+        <img src="image/menu_white" class="side_menu" alt="">
+        <nav class="side_menu">
+            <ul>
+                <li><a href="index.html">메인으로</a></li>
+                <li><a href="introduce_myself.html">자기소개</a></li>
+                <li><a href="animal.html">동물농장</a></li>
+                <li><a href="developer_roadmap.html">개발자 로드맵</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <section>
+      <!-- Member Join -->
+      <div id="header">Member Join</div>
+      <!-- 래퍼 -->
+      <div id="wrapper">
+          <div id="content">
+              <form action="javascript:success();" name="memberForm">
+                <fieldset>
+                    <!-- 아이디 -->
+                <div>
+                    <h3 class="join_guide">
+                        <label for="id">아이디</label>
+                        <span class="error_id">영문과 숫자를 포함한 8-16자리를 입력하세요.</span>
+                    </h3>
+                    <div class="box inputbox_id">
+                        <input type="text" id="id" class="int" maxlength="20" placeholder="">
+                    </div>
+                </div>
+
+                <!-- 비밀번호 -->
+                <div>
+                    <h3 class="join_guide">
+                        <label for="psw">비밀번호</label>
+                        <span class="error_psw">영문, 숫자, 특수문자(\*!&)를 포함한 8-16자리를 입력하세요.</span>
+                    </h3>
+                    <div class="box inputbox_pass">
+                        <input type="password" id="psw" class="int" maxlength="20" placeholder="">
+                    </div>
+                </div>
+
+                <!-- 비밀번호확인 -->
+                <div>
+                    <h3 class="join_guide">
+                        <label for="psw_check">비밀번호 재확인</label>
+                        <span class="error_psw_check">비밀번호가 일치하지 않습니다.</span>
+                    </h3>
+                    <div class="box intputbox_pass_check">
+                        <input type="password" id="psw_check" class="int" maxlength="20">
+                    </div>
+                </div>
+
+                <!-- 이름 -->
+                <div>
+                    <h3 class="join_guide">
+                        <label for="userName">이름</label>
+                        <span class="error_userName">올바르지 않은 입력입니다.(필수입력항목)</span>                    
+                        </h3>
+                    <div class="box inputbox_userName">
+                        <input type="text" id="userName" class="int" maxlength="20">
+                    </div>
+                </div>
+
+                <!-- 생일 -->
+                <div>
+                    <h3 class="join_guide">
+                        <label for="yy">생년월일</label>
+                        <span class="error_birth">올바르지 않은 입력입니다.</span>                    
+                        </h3>
+                    <div id="birth_wrap">
+                        <!-- 생일(year) -->
+                        <div id="birth_yy">
+                            <div class="box">
+                                <input type="text" id="yy" class="int" maxlength="4" placeholder="년(4자)">
+                            </div>
+                        </div>
+
+                        <!-- 생일(month) -->
+                        <div id="birth_mm">
+                            <div class="box">
+                                <select id="mm" class="sel">
+                                    <option value="월">월</option>
+                                    <option value="01">1</option>
+                                    <option value="02">2</option>
+                                    <option value="03">3</option>
+                                    <option value="04">4</option>
+                                    <option value="05">5</option>
+                                    <option value="06">6</option>
+                                    <option value="07">7</option>
+                                    <option value="08">8</option>
+                                    <option value="09">9</option>                                    
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- 생일(day) -->
+                        <div id="birth_dd">
+                            <div class="box">
+                                <input type="text" id="dd" class="int" maxlength="2" placeholder="일">
+                            </div>
+                        </div>
+                    </form>
+                  </div>
+              </div>
+
+              <!-- 성별 -->
+              <div>
+                  <h3 class="join_guide">
+                      <label for="gender">성별</label>
+                      <span class="error_gender">필수 입력 정보입니다.</span> 
+                    </h3>
+                  <div class="box gender_code">
+                      <select id="gender" class="sel">
+                          <option value="N">중성</option>
+                          <option value="M">남자</option>
+                          <option value="F">여자</option>
+                      </select>                            
+                  </div>
+              </div>
+
+              <!-- 이메일 -->
+              <div>
+                  <h3 class="join_guide">
+                      <label for="email">본인확인 이메일 (선택)</label>
+                          <span class="error_email">이메일 형식이 올바르지 않습니다.</span>                    
+                        </h3>
+                  <div class="box inputbox_email">
+                      <input type="text" id="email" class="int" maxlength="100" placeholder="선택입력">
+                  </div>
+              </div>
+
+              <!-- 휴대전화 -->
+              <div>
+                  <h3 class="join_guide">
+                      <label for="mobile">휴대전화</label>
+                      <span class="error_mobile">입력이 올바르지 않습니다.</span>                    
+                    </h3>
+                  <div class="box intputbox_mobile">
+                      <input type="tel" id="mobile" class="int" maxlength="16" placeholder="전화번호 입력">
+                  </div>
+              </div>
+
+              <!-- 가입버튼 -->
+              <div class="btn_area">
+                  <button type="submit" id="btn-join">
+                      <span>가입하기</span>
+                  </button>
+              </div>
+                </fieldset>
+                
+            </form>
+          </div> 
+      </div> 
+    </section>
+    <script>
+        console.log($(mm).find("[value='월']").prop("selected"));
+        //각 항목 focus아웃시 유효성검사
+        $(id).focusout(validateId);
+        $(psw).focusout(validatePsw);
+        $(psw_check).focusout(validatePswCheck);
+        $(userName).focusout(validateUserName);
+        $(yy).focusout(validateYy);
+        $(mm).focusout(validateMm);
+        $(dd).focusout(validateDd);
+        $(gender).focusout(validateGender);
+        $(email).focusout(validateEmail);
+        $(mobile).focusout(validateMobile);
+
+        //아이디 유효성 검사
+        function validateId({target=id}){ // 이벤트객체를 전달받는 경우 target속성을 가져오고, 빈객체를 받는 경우 'id'를 기본값으로 설정
+        
+            //영문, 숫자 있는지 + 자리수 검사
+            const regArr = [/[a-z]/i,/[0-9]/,/^.{8,16}$/];
+            for(let i = 0; i<regArr.length; i++){
+                if(!regArr[i].test($(id).val())){
+                    $(`.error_${$(target).prop("id")}`).css("display","inline");
+                    return false;
+                }
+            }
+            //추가검사 : 허용된 문자 이외의 문자가 입력되었을 때
+            if(/[^a-z0-9]/i.test($(id).val())){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        };
+        //비밀번호 유효성 검사
+        function validatePsw({target=psw}){ //이벤트리스너에 의한 실행은 이벤트 객체 전달받음 => target속성 가져옴 / submit유효성검사에서는 이벤트객체를 받지 못하기 때문에 빈객체를 전달받고, 기본값을 psw의 id(psw)로 줌 
+            //영문, 숫자, 특수문자 있는지 검사
+            const regArr = [/^.{8,15}$/, /\d/, /[a-zA-Z]/, /[\*!&]/];
+            for(let i = 0; i < regArr.length; i++){
+                if(!regArr[i].test($(psw).val())){
+                    $(`.error_${$(target).prop("id")}`).css("display","inline");
+                    return false;
+                }
+            }
+            //추가 : 허용된 문자 이외의 문자가 입력되었을 때
+            if(/[^0-9a-zA-Z\*!&]/.test($(psw).val())){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        }
+        //비밀번호확인 유효성 검사
+        function validatePswCheck({target=psw_check}){
+            if($(psw).val()!==$(psw_check).val()){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        }
+        //이름 유효성 검사
+        function validateUserName({target=userName}){
+            if(/[^가-힣]/.test($(userName).val())||!/.{2,}/.test($(userName).val())){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        }
+        // //생일 유효성 검사
+        // /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/
+        // function validateBirth(){
+        //     //년도 유효성 검사
+        //     if(!/^(19[0-9][0-9]|20\d{2})$/.test($(yy).val())){
+        //         $(".error_birth").css("display","inline");
+        //         return false;
+        //     }
+        //     //월 유효성 검사
+        //     if($(mm).find("[value='월']").prop("selected")){
+        //         $(".error_birth").css("display","inline");
+        //         return false;
+        //     }
+        //     //일 유효성 검사
+        //     if(!/^([1-9]|[1-2][0-9]|3[0-1])$/){
+        //         $(".error_birth").css("display","inline");
+        //         return false;
+        //     }
+        //     $(".error_birth").css("display","none");
+        //     return true;
+
+        // }
+        //생일 유효성 검사 (년)
+        function validateYy({target=yy}){
+            if(!/^(19[0-9][0-9]|20\d{2})$/.test($(yy).val())){
+                $(".error_birth").css("display","inline");
+                return false;
+            }
+            $(".error_birth").css("display","none");
+            return true;
+        }
+        // //생일 유효성 검사 (월)
+        function validateMm({target=mm}){
+            if($(target).find("[value='월']").prop("selected")){
+                $(".error_birth").css("display","inline");
+                return false;
+            }
+            $(".error_birth").css("display","none");
+            return true;
+        }
+        //생일 유효성 검사 (일)
+        function validateDd({target=dd}){
+            if(!/^([1-9]|[1-2][0-9]|3[0-1])$/.test($(target).val())){
+                $(".error_birth").css("display","inline");
+                return false;
+            }
+            $(".error_birth").css("display","none");
+            return true;
+        }
+        //성별 유효성 검사
+        function validateGender({target=gender}){
+            if($("#gender option[value='N']").prop("selected")){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        }
+        //이메일 유효성 검사
+        function validateEmail({target=email}){
+            const reg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+            // const reg = /^[\w]{4,}@[\w]+(\.[\w]+){1,3}$/
+            if(!reg.test($(email).val())){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+        }
+        //핸드폰번호 유효성 검사
+        function validateMobile({target=mobile}){
+            const reg = /^01([0|1|6|7|8|9])-?([0-9]{3,4})-?([0-9]{4})$/;
+            if(!reg.test($(mobile).val())){
+                $(`.error_${$(target).prop("id")}`).css("display","inline");
+                return false;
+            }
+            $(`.error_${$(target).prop("id")}`).css("display","none");
+            return true;
+            }
+
+
+        //제출시 유효성 검사//
+        // $(document).ready($(document.memberForm).submit(validateSubmit));
+        $(document.memberForm).submit(validateSubmit);
+        function validateSubmit(e){
+            if(!validateId({})) return false;
+            if(!validatePsw({})) return false;
+            if(!validatePswCheck({})) return false;
+            if(!validateUserName({})) return false;
+            if(!validateYy({})) return false;
+            if(!validateMm({})) return false;
+            if(!validateDd({})) return false;
+            if(!validateGender({})) return false;
+            if(!validateEmail({})) return false;
+            if(!validateMobile({})) return false;
+            return true;
+        }
+
+        function success(){
+            alert(`${$(userName).val()}님, 가입을 환영합니다!`);
+            location.href="index.html";
+        }
+    </script>
+</body>
+</html>

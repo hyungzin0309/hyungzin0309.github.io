@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Farm</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/animal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&family=Hi+Melody&display=swap" rel="stylesheet">
+    </head>
+<body>
+    <!-- <video src="video/동구2.mp4" controls autoplay loop muted width="300px"></video> -->
+
+    <figure>
+      <aside>
+        <!-- 메뉴바 아이콘 -->
+        <img src="image/menu_white" class="side_menu" alt="">
+        <nav class="side_menu">
+            <!-- 메뉴바 내용 -->
+            <ul>
+                <li><a href="index.html">메인으로</a></li>
+                <li><a href="introduce_myself.html">자기소개</a></li>
+                <li><a href="developer_roadmap.html">개발자 로드맵</a></li>
+                <li><a href="member_join.html">회원가입</a></li>
+            </ul>
+        </nav>
+    </aside>
+        <h1>
+            <strong>KHJLAB</strong><br>
+            <span>A JUMSIM MO MUK JI</span>
+        </h1>
+        <section>
+            
+            <article class="on">
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container ddong_goo"></div>
+                        <div class="name">동구 / 9</div>
+                        <p>우리집 보안관. <br>무언가 본인의 마음에 들지 않는 것이 있으면 어느샌가 달려와 짖고 있다.<br> 고양이들과 자주 싸운다. <br> 이긴 적은 없다.</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container happy"></div>
+                        <div class="name">행복 / 8</div>
+                        <p>고양이 서열 1위. <br>고양이들에겐 불친절하나<br> 먹이를 주는 집사에겐 친절하다. <br> 애교가 많으며 엉덩이 마사지를 좋아한다.</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container funny"></div>
+                        <div class="name">기쁨 / 8</div>
+                        <p>행복이 친동생. <br>매일 언니에게 맞는다. <br> 이유는 모른다. <br>항상 배를 보이며 거실바닥에 드러누워있는 것이 특징. </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container snow"></div>
+                        <div class="name">설 / 6</div>
+                        <p>고양이 중 셋째. <br>몸집은 왜소하지만 제일 사납다. <br>원래는 애교가 많았지만 군대를 갔다온 이후 나를 피해다니는 것이 특징. ㅠ </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container boksil"></div>
+                        <div class="name">복실 / 6</div>
+                        <p>성격이 가장 순하고 얌전하다. <br>그렇다고 애교가 있는 것은 아니다. <br>얼굴이 귀여워 인형을 보고 있는 것 같다. </p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">        
+                    <div class="content">
+                        <div class="animal-container fall"></div>
+                        <div class="name">가을 / 4</div>
+                        <p>막내라인. 피지컬이 압도적. <br>마음만 먹으면 언니들을 압살할 수 있을 만큼 강력하나 가슴이 옹졸하여 그럴 깜냥이 되지 못한다. <br>겁이 매우 많아 사람을 피해다니는 것이 특징. </p>
+                    </div>            
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container star"></div>
+                        <div class="name">별쭈 / 4</div>
+                        <p>막내. <br>친언니 가을이와 달리 사람을 매우 좋아하며 애교가 많다. <br> 언니들에게 까불기를 좋아한다.</p>
+                    </div>
+                </div>
+            </article>
+            <article>
+                <div class="inner">
+                    <div class="content">
+                        <div class="animal-container jipsa"></div>
+                        <div class="name">집사 / 26</div>
+                        <p>밥주고 놀아주는 기계</p>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <div class="btn-prev"><span>PREV</span></div>
+        <div class="btn-next"><span>NEXT</span></div>
+    </figure>
+    <script>
+        const $frame = $("section");
+        const $lists = $("article");
+        const deg = 45;
+        //각 article요소들 0,45,90,135,...,315도씩 돌리기 + -100vh씩 이동 (사각형의 아랫면을 기준으로 +100vh만큼의 길이를 움직이는 것)
+        $lists.each((i,el)=>{
+           $(el).css("transform",`rotate(${deg*i}deg) translateY(-100vh)`);
+           i++;
+        })
+
+        const $prev = $(".btn-prev");
+        const $next = $(".btn-next");
+        let num = 0;
+        // 이전키를 누르면 각 article요소들 현재 각도에서 +45도(오른쪽으로)만큼 이동
+        $prev.click((e)=>{
+            num++;
+            const $on = $frame.find(".on")
+            $frame.css("transform",`rotate(${deg*num}deg)`); // 프레임만 돌아도 겉에 있는 네모들 전체 다 돌아감
+            $on.removeClass('on'); // 크고 불투명하게 나타내는 것 없애기
+            if($on.prev()[0]){$on.prev().addClass('on');} // 이전 요소가 있으면 이전요소에 .on클래스 추가
+            else{$frame.children().last().addClass('on');} // 이전 요소가 없다면 가장 마지막 요소에 .on클래스 추가
+        });
+        // 다음키를 누르면 현재 각도에서 -45
+        $next.click((e)=>{
+            num--;
+            const $on = $frame.find(".on")
+            $frame.css("transform",`rotate(${deg*num}deg)`);
+            $on.removeClass('on');
+            if($on.next()[0]){$on.next().addClass('on')}
+            else{$frame.children().first().addClass('on')}
+        });
+    </script>
+</body>
+</html>

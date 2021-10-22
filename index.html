@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="js/main.js"></script> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="css/main.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <title>index</title>
+</head>
+<body>
+    <h1>
+        <strong>KHJLAB</strong><br>
+        <span>A JUMSIM MO MUK JI</span>
+    </h1>
+    <section>
+            <!-- 사이드 메뉴바 -->
+    <aside>
+        <!-- 메뉴바 아이콘 -->
+        <img src="image/menu6.png" class="side_menu" alt="">
+        <nav class="side_menu">
+            <!-- 메뉴바 내용 -->
+            <ul>
+                <li><a href="introduce_myself.html">자기소개</a></li>
+                <li><a href="animal.html">동물농장</a></li>
+                <li><a href="developer_roadmap.html">개발자 로드맵</a></li>
+                <li><a href="member_join.html">회원가입</a></li>
+            </ul>
+        </nav>
+    </aside>
+    <!-- 메인페이지 -->
+    <main class="main_page">
+        <div>
+            <!-- 메인페이지 텍스트 -->
+            <ul class="text">
+                <li>
+                    <h2><a href="introduce_myself.html" class="main_text" id="me">자기소개</a></h2>
+                </li>
+                <li>
+                    <h2><a href="animal.html" class="main_text" id="trip">동물농장</a></h2>
+                </li>
+                <li>
+                    <h2><a href="developer_roadmap.html" class="main_text" id="developer">개발자 로드맵</a></h2>
+                </li>
+                <li>
+                    <h2><a href="member_join.html" class="main_text" id="member">회원가입</a></h2>
+                </li>
+            </ul>
+        </div>
+        <!-- 메인페이지 이미지(아이콘) -->
+        <div class="img_container">
+            <img src="image/user (2).png" alt="" class="main_page_img me">
+            <img src="image/cat.png" alt="" class="main_page_img trip">
+            <img src="image/boat-trip.png" alt="" class="main_page_img developer">
+            <img src="image/member.png" alt="" class="main_page_img member">
+        </div>
+
+    </main>
+    </section>
+    <footer>
+        <p>2021 DESIGNED BY KHJ</p>
+    </footer>
+    <script>
+        $(".text").find("li:not(:last)").css("margin-bottom","15vw");
+        
+        // 이스터에그
+        const snake = function(e){
+            const arr = [];
+            return function(e){
+                text = "";
+                arr.unshift(e.key);
+                for(let i = 4; i>=0; i--){
+                    text+=arr[i];
+                }
+                if(text === "snake"){
+                    location.href = "snake.html"
+                }
+            };
+        }
+        const egg = snake();
+        window.addEventListener('keypress', egg);
+
+
+        // 이미지 바꾸는 제어
+        const imgTriggerMargin = 150;
+        const textElementList = Array.from(document.getElementsByClassName("main_text"));
+        const imgElementList = Array.from(document.getElementsByClassName("main_page_img"));
+
+        const showImg = function() {
+        for (const text of textElementList) {
+            //보고있는 화면의 길이가 (요소와 화면 상단사이+150px)의 길이보다 클 때
+                if (window.innerHeight > text.getBoundingClientRect().top + imgTriggerMargin ) {
+                    // console.log(text.getBoundingClientRect().top);
+                    // console.log(window.innerHeight);
+                    textElementList.forEach(function(elem){
+                        if (elem.id===text.id) elem.classList.add('show'); //텍스트박스 나타남
+                        else elem.classList.remove('show'); // 나머지텍스트박스 숨김
+                    });
+                    imgElementList.forEach(function(elem){
+                        if(elem.classList.contains(text.id)) elem.classList.add('show'); // 이미지나타남
+                        else elem.classList.remove('show'); // 나머지 이미지 숨김
+                    });
+                }
+        }
+        }
+        window.addEventListener('load', showImg);
+        window.addEventListener('scroll', showImg);
+
+</script>
+</body>
+</html>
